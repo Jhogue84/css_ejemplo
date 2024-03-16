@@ -1,0 +1,31 @@
+1.Instalar en pc node js
+2.En visual studio, los paquetes de liveserver y live sass compiler
+3.
+
+Para personalizar CSS
+*.Abrir terminal
+*.Digitar >npm init -y ; nos instala el package.json
+--
+*.Digitar >npm install bootstrap@next; nos instala bootstrap, en la carpeta node_modules.
+*Esta carpeta node_modules (incluir en el .gitIgnore)
+*.Dentro de node_modules nos interesa la carpeta scss, donde estan los archivos de sass
+--
+*.Utilizar los archivos sass, quitamos el cdn de css en el index.html
+*.Creamos una carpeta sass y archivo.scss, y llevara tambien nuestras personalizaciones
+*.En el archivo .scss importamos los archivos de sass: @import  "node_modules/bootstrap/scss/bootstrap"
+*.Ya tenemos los archivos sass, pero el navegador no entiende la extencion .scss
+--
+*.Ahora utilzaremso live sass compiler, en la parte inferior de Vscode dice "Wacht Sass"
+*.Crear una carpeta CSS y el archivos css, esta compilando los archivos sass.
+
+Listo ya se puede utilizar css de sass,
+si se realiza una modificacion en el archivo .scss, se debe compilar otra vez.
+
+Per hasta el momento el archivo css es muy grande y lo pueden minorizar asi:
+
+-g de forma globlal
+*.Ejecutar el comando >npm i -g purgecss
+//purgecss --css <css> --content <content> [options]
+*.Ejecutar comando>purgecss --css sass/custom.css --content grid2.html -o sass/custom.min.css
+
+*.NOTA: para no ejecutar siempre el comando, en el package.json en la opcion de script, pegas el comando.
